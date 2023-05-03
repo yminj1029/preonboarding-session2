@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { ReactComponent as Glasses } from '../image/glasses.svg';
 
 const SearchDiv = styled.div`
   display: flex;
@@ -61,10 +62,11 @@ const SearchInputDiv = styled.div`
     font-size: 1.125rem;
     line-height: 1.15;
     ::-webkit-search-cancel-button {
-      position:relative;  
-      right:20px;
+      position: relative;
+      right: 20px;
       height: 30px;
       width: 30px;
+    }
   }
 `;
 
@@ -91,20 +93,12 @@ function SearchInput() {
       <SearchInputDiv>
         <label htmlFor="search_bar_main" />
         <div className="search_bar-div">
-          <span className="icon-prev-reading-glasses">
-            <svg viewBox="0 0 16 16" fill="currentColor" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6.56 0a6.56 6.56 0 015.255 10.49L16 14.674 14.675 16l-4.186-4.184A6.56 6.56 0 116.561 0zm0 1.875a4.686 4.686 0 100 9.372 4.686 4.686 0 000-9.372z" />
-            </svg>
-          </span>
+          <Glasses className="icon-prev-reading-glasses" fill="currentColor" />
         </div>
         <input id="search_bar_main" type="search" spellCheck="false" placeholder="질환명을 입력해 주세요" />
       </SearchInputDiv>
       <SearchBtnDiv type="button">
-        <div className="icon-next-reading-glasses">
-          <svg viewBox="0 0 16 16" fill="currentColor" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6.56 0a6.56 6.56 0 015.255 10.49L16 14.674 14.675 16l-4.186-4.184A6.56 6.56 0 116.561 0zm0 1.875a4.686 4.686 0 100 9.372 4.686 4.686 0 000-9.372z" />
-          </svg>
-        </div>
+        <Glasses className="icon-next-reading-glasses" fill="currentColor" viewBox="0 0 16 16" />
       </SearchBtnDiv>
     </SearchDiv>
   );
