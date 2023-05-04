@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 import styled from 'styled-components';
 import { ReactComponent as Glasses } from '../image/glasses.svg';
 
@@ -87,7 +87,12 @@ const SearchBtnDiv = styled.button`
     height: 21px;
   }
 `;
-function SearchInput() {
+
+interface SearchFormProps {
+  handleInput: (event: ChangeEvent<HTMLInputElement>) => Promise<void>;
+}
+function SearchInput(props: SearchFormProps) {
+  const { handleInput } = props;
   return (
     <SearchDiv>
       <SearchInputDiv>
@@ -95,7 +100,13 @@ function SearchInput() {
         <div className="search_bar-div">
           <Glasses className="icon-prev-reading-glasses" fill="currentColor" />
         </div>
-        <input id="search_bar_main" type="search" spellCheck="false" placeholder="질환명을 입력해 주세요" />
+        <input
+          onChange={handleInput}
+          id="search_bar_main"
+          type="search"
+          spellCheck="false"
+          placeholder="질환명을 입력해 주세요"
+        />
       </SearchInputDiv>
       <SearchBtnDiv type="button">
         <Glasses className="icon-next-reading-glasses" fill="currentColor" viewBox="0 0 16 16" />
