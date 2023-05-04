@@ -17,12 +17,13 @@ export default function useSuggestion() {
       const response = await getSuggestions({ name: event.target.value });
       setSuggestions(response);
     } catch (e) {
-      setError('할 일 목록을 불러오는 데 실패하였습니다.');
+      setError('실패하였습니다.');
     }
   };
 
   return {
     suggestions,
+    error,
     handleSearchInput,
   };
 }

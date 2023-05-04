@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import SearchInput from '@components/SearchInput';
 import Suggestion from '@components/Suggestion';
 import './App.css';
 import useSuggestion from '@hooks/useSuggestion';
 
 function App() {
-  const [state, setState] = useState('');
   const { suggestions, handleSearchInput } = useSuggestion();
 
   return (
