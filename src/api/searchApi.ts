@@ -11,7 +11,7 @@ type SearchInput = {
 };
 
 const getSuggestions = async (requestBody: SearchInput): Promise<Suggestions> => {
-  const response = await api.get(`/api/v1/search-conditions/`, { params: requestBody });
+  const response = await api.get('', { params: requestBody });
   return response.data;
 };
 

@@ -1,11 +1,11 @@
 import axios from 'axios';
 
-// const defaultOptions = {
-//   baseURL: process.env.REACT_APP_API_URL,
-//   headers: {
-//     withCredentials: true,
-//   },
-// };
-const api = axios.create();
+const defaultOptions = {
+  baseURL: '/api/v1/search-conditions/',
+  headers: {
+    withCredentials: true,
+  },
+};
+const api = axios.create(defaultOptions);
 
 export default api;

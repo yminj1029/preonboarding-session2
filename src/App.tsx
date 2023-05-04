@@ -18,7 +18,7 @@ function App() {
         </h2>
       </div>
       <SearchInput handleInput={handleSearchInput} />
-      <Suggestion />
+      <Suggestion suggestionList={suggestions} />
     </div>
   );
 }

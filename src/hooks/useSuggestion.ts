@@ -14,8 +14,6 @@ export default function useSuggestion() {
 
   const handleSearchInput = async (event: React.ChangeEvent<HTMLInputElement>) => {
     try {
-      console.log(event);
-
       const response = await getSuggestions({ name: event.target.value });
       setSuggestions(response);
     } catch (e) {
