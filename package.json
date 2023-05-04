@@ -12,6 +12,7 @@
     "@types/node": "^16.18.25",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.1",
+    "axios": "^1.4.0",
     "eslint-plugin-html": "^7.1.0",
     "lint-staged": "^13.2.2",
     "react": "^18.2.0",
@@ -65,5 +66,6 @@
     "./src/*/.{js,jsx,ts,tsx}": [
       "npm run lint -- --fix"
     ]
-  }
+  },
+  "proxy": "https://api.clinicaltrialskorea.com"
 }

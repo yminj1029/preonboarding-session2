@@ -48,15 +48,27 @@ const SuggestionList = styled.ul`
     }
   }
 `;
-function Suggestion() {
+
+type SuggestionData = {
+  id: number;
+  name: string;
+};
+
+interface SuggestionProps {
+  suggestionList: SuggestionData[];
+}
+
+function Suggestion(props: SuggestionProps) {
+  const { suggestionList } = props;
   return (
     <SearchDiv>
       <TitleSpan>추천 검색어</TitleSpan>
       <SuggestionList>
-        <li>test1</li>
-        <li>test2</li>
-        <li>test3</li>
-        <li>test4</li>
+        {suggestionList.length === 0 ? (
+          <div>데이터가 없습니다.</div>
+        ) : (
+          suggestionList.map(suggestion => <li>{suggestion.name}</li>)
+        )}
       </SuggestionList>
     </SearchDiv>
   );

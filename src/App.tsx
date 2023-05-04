@@ -2,8 +2,11 @@ import React from 'react';
 import SearchInput from '@components/SearchInput';
 import Suggestion from '@components/Suggestion';
 import './App.css';
+import useSuggestion from '@hooks/useSuggestion';
 
 function App() {
+  const { suggestions, handleSearchInput } = useSuggestion();
+
   return (
     <div className="App">
       <div className="App-header">
@@ -13,8 +16,8 @@ function App() {
           온라인으로 참여하기
         </h2>
       </div>
-      <SearchInput />
-      <Suggestion />
+      <SearchInput handleInput={handleSearchInput} />
+      <Suggestion suggestionList={suggestions} />
     </div>
   );
 }
